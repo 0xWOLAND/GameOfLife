@@ -5,7 +5,7 @@ export default class Bar extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-
+    this.state = { incrementer: null };
     this.simulate = this.simulate.bind(this);
     this.getNumAliveNeighbors = this.getNumAliveNeighbors.bind(this);
   }
@@ -96,15 +96,16 @@ export default class Bar extends Component {
 
   handleClick() {
     var btn = document.getElementById("button");
-    var ele;
+
     if (btn.className === "inactive") {
       btn.className = "active";
       console.log("Starting simulator...");
-      ele = setInterval(this.simulate.bind(this), 19);
+      this.setState({ incrementer: setInterval(this.simulate.bind(this), 19) });
     } else {
       console.log("Stopping simulator...");
       btn.className = "inactive";
-      clearInterval(ele);
+      clearInterval(this.state.incrementer);
+      this.setState({ incrementer: null });
     }
   }
 
