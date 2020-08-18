@@ -1,4 +1,4 @@
-### Game of Life
+# Game of Life
 A simulator of cellular automata depicting Conway's Game Of Life using Node JS and React JS.
 
 ## Available Scripts
