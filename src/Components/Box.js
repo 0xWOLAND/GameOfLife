@@ -11,6 +11,6 @@ export default class Box extends Component {
     console.log(this.props.id);
   }
   render() {
-    return <td className="box" onClick={this.handleClick}></td>;
+    return <td className="box" id={this.props.id} onClick={this.handleClick}></td>;
   }
 }
