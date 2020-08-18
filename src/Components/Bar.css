@@ -4,7 +4,10 @@
   top: 0;
 }
 
-#button {
-  width: 50px;
+#main-button-container {
+  align-items: center;
+}
+img {
+  width: 25px;
   height: 25px;
 }

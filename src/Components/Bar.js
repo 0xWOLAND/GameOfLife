@@ -113,11 +113,13 @@ export default class Bar extends Component {
       this.setState({
         incrementer: setInterval(this.simulate.bind(this), 250),
       });
+      btn.src = "https://img.icons8.com/fluent/30/000000/pause.png";
     } else {
       console.log("Stopping simulator...");
       btn.className = "inactive";
       clearInterval(this.state.incrementer);
       this.setState({ incrementer: null });
+      btn.src = "https://img.icons8.com/fluent/24/000000/play.png";
     }
   }
 
@@ -137,7 +139,7 @@ export default class Bar extends Component {
           </Navbar.Brand>{" "}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="mr-auto" id="main-button-container">
               <Nav.Link href="#features">Features</Nav.Link>
               <Nav.Link href="#pricing">Pricing</Nav.Link>
               <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
@@ -154,11 +156,12 @@ export default class Bar extends Component {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item>
-                <button
+                <img
+                  src="https://img.icons8.com/fluent/24/000000/play.png"
                   id="button"
                   className="inactive"
                   onClick={this.handleClick}
-                ></button>
+                />
               </Nav.Item>
             </Nav>
             <Nav>
