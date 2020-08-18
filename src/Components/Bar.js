@@ -18,6 +18,7 @@ export default class Bar extends Component {
     this.state = { incrementer: null };
     this.simulate = this.simulate.bind(this);
     this.getNumAliveNeighbors = this.getNumAliveNeighbors.bind(this);
+    this.eraseBoard = this.eraseBoard.bind(this);
   }
 
   getNumAliveNeighbors(R, C) {
@@ -123,6 +124,17 @@ export default class Bar extends Component {
     }
   }
 
+  clearRow(r) {
+    for (var c = 0; c < 100; c++) {
+      document.getElementById("" + r + "-" + c).className = "dead";
+    }
+  }
+  eraseBoard() {
+    for (var i = 0; i < 75; i++) {
+      setTimeout(this.clearRow(i), 500);
+    }
+  }
+
   render() {
     return (
       <div id="bar">
@@ -140,9 +152,7 @@ export default class Bar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto" id="main-button-container">
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown title="Still Lifes" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
@@ -150,18 +160,46 @@ export default class Bar extends Component {
                 <NavDropdown.Item href="#action/3.3">
                   Something
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  One more thing
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item>
+              <NavDropdown title="Oscillators" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">
+                  One more thing
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Spaceships" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">
+                  One more thing
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Item class="mr-auto">
                 <img
                   src="https://img.icons8.com/fluent/24/000000/play.png"
                   id="button"
                   className="inactive"
                   onClick={this.handleClick}
                 />
+              </Nav.Item>
+              <Nav.Item class="mr-auto">
+                <Button variant="danger" onClick={this.eraseBoard}>
+                  Erase
+                </Button>
               </Nav.Item>
             </Nav>
             <Nav>

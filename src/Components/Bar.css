@@ -5,9 +5,11 @@
 }
 
 #main-button-container {
-  align-items: center;
+  /* align-items: center; */
 }
 img {
+  margin: 7px;
+  margin-left: 0;
   width: 25px;
   height: 25px;
 }
