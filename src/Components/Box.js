@@ -9,6 +9,7 @@ export default class Box extends Component {
     this.state = { className: "dead" };
   }
   handleChange() {
+    
     if (document.getElementById("button").className === "inactive") {
       if (this.state.className == "dead") {
         this.setState({ className: "alive" });
