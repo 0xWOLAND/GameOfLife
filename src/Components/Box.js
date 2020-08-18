@@ -1,6 +1,8 @@
-import React from "react"
+import React, {Component} from "react"
 import "./Box.css"
 
-export default function func(){
-    return <p>Hello World!</p>
+export default class Box extends Component {
+    render() {
+        return <p>Hi</p>
+    }
 }
