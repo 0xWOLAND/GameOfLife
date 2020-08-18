@@ -1,11 +1,88 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Box from "./Components/Box"
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Box from "./Components/Box";
 function App() {
   return (
     <div id="App">
-      <Box />
+      <table>
+      <tbody>
+        <tr>
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+        </tr>
+      </tbody>
+      </table>
     </div>
   );
 }
