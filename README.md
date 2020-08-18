@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Game of Life
+A simulator of cellular automata depicting Conway's Game Of Life using Node JS and React JS.
 
 ## Available Scripts
 
