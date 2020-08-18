@@ -5,6 +5,7 @@ export default class Box extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+
     this.state = { className: "dead" };
   }
   handleChange() {
@@ -16,13 +17,14 @@ export default class Box extends Component {
       }
     }
   }
+
   render() {
     return (
       <td
         className={this.state.className}
         id={this.props.id}
         onClick={this.handleChange}
-        
+        draggable="false"
       ></td>
     );
   }

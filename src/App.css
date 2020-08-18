@@ -7,10 +7,16 @@
   justify-content: center;
   align-items: center;
 }
-
+tbody {
+  top: 100px;
+}
 tr {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+}
+
+#tbl {
+  margin: 50px;
 }
 
