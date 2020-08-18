@@ -139,7 +139,7 @@ export default class Bar extends Component {
     return (
       <div id="bar">
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand >
             <img
               alt=""
               src={Logo}
@@ -151,42 +151,31 @@ export default class Bar extends Component {
           </Navbar.Brand>{" "}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto" id="main-button-container">
+            <Nav className="mr-auto">
               <NavDropdown title="Still Lifes" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
-                  One more thing
-                </NavDropdown.Item>
+                <NavDropdown.Item>Block</NavDropdown.Item>
+                <NavDropdown.Item>Beehive</NavDropdown.Item>
+                <NavDropdown.Item>Loaf</NavDropdown.Item>
+                <NavDropdown.Item>Boat</NavDropdown.Item>
+                <NavDropdown.Item>Tub</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Oscillators" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
-                  One more thing
-                </NavDropdown.Item>
+                <NavDropdown.Item>Blinker</NavDropdown.Item>
+                <NavDropdown.Item>Toad</NavDropdown.Item>
+                <NavDropdown.Item>Beacon</NavDropdown.Item>
+                <NavDropdown.Item>Pulsar</NavDropdown.Item>
+                <NavDropdown.Item>Pentadecathlon</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Spaceships" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
-                  One more thing
-                </NavDropdown.Item>
+                <NavDropdown.Item>Glider</NavDropdown.Item>
+                <NavDropdown.Item>Light-Weight Spaceship</NavDropdown.Item>
+                <NavDropdown.Item>Middle-Weight Spaceship</NavDropdown.Item>
+                <NavDropdown.Item>Heavy-Weight Spaceship</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Glider Guns" id="collasible-nav-dropdown">
+                <NavDropdown.Item>Simkin Glider Gun</NavDropdown.Item>
+                <NavDropdown.Item>Gosper Glider Gun</NavDropdown.Item>
+                
               </NavDropdown>
               <Nav.Item class="mr-auto">
                 <img
@@ -203,10 +192,8 @@ export default class Bar extends Component {
               </Nav.Item>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
+              <Nav.Link>More deets</Nav.Link>
+              <Nav.Link>Dank memes</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
