@@ -29,7 +29,7 @@ export default class Box extends Component {
     ];
     let sizes = [
       [4, 4],
-      [6, 5],
+      [5, 6],
       [6, 6],
       [5, 5],
       [5, 5],
@@ -39,11 +39,11 @@ export default class Box extends Component {
       [17, 17],
       [11, 18],
       [6, 6],
-      [8, 6],
-      [11, 9],
-      [12, 10],
-      [38, 11],
-      [35, 23],
+      [6, 8],
+      [9, 11],
+      [10, 12],
+      [11, 38],
+      [23, 35],
     ];
     let len = sizes[patterns.indexOf(name)];
     let ID = this.props.id;
@@ -67,22 +67,26 @@ export default class Box extends Component {
 
     console.log("X: " + x);
     console.log("Y: " + y);
+    console.log("Width: " + len[0]);
+    console.log("Height: " + len[1]);
     console.log("Half X: " + halfX);
     console.log("Half Y: " + halfY);
     console.log("Is X Even: " + isXEven);
     console.log("Is Y Even: " + isYEven);
-    
-    for (var X = x - halfX; X <= x + halfX + isXEven; X++) {
-      for (var Y = y - halfY; Y <= y + halfY + isYEven; Y++) {
+
+    for (var X = x - halfX; X < x + halfX + isXEven; X++) {
+      for (var Y = y - halfY; Y < y + halfY + isYEven; Y++) {
         try {
-          document.getElementById("" + Y + "-" + X).className = "alive";
-        } catch {
           console.log("" + X + "-" + Y);
+          document.getElementById("" + X + "-" + Y).className = "alive";
+        } catch {
+          console.log("Error: " + X + "-" + Y);
         }
       }
     }
   }
   handleChange() {
+    console.log(this.props.id);
     if (
       document.getElementsByClassName("btnSelected").length > 0 &&
       document.getElementById("button").className === "inactive"
