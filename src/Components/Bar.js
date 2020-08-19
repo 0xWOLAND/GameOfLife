@@ -7,6 +7,10 @@ import {
   ButtonGroup,
   ToggleButton,
   Button,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalTitle
 } from "react-bootstrap";
 import Github from "./github.png"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,6 +24,8 @@ export default class Bar extends Component {
     this.simulate = this.simulate.bind(this);
     this.getNumAliveNeighbors = this.getNumAliveNeighbors.bind(this);
     this.eraseBoard = this.eraseBoard.bind(this);
+
+    
   }
 
   getNumAliveNeighbors(R, C) {
@@ -154,8 +160,12 @@ export default class Bar extends Component {
   }
 
   render() {
+    
+
+
     return (
       <div id="bar">
+
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Navbar.Brand>
             <img
