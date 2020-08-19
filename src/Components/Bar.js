@@ -4,10 +4,11 @@ import {
   Navbar,
   Nav,
   NavDropdown,
-  Form,
+  ButtonGroup,
+  ToggleButton,
   Button,
-  FormControl,
 } from "react-bootstrap";
+import Github from "./github.png"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Pause from "./pause.png";
 import Logo from "./logo.png";
@@ -36,8 +37,8 @@ export default class Bar extends Component {
     return cnt;
   }
   // == Dimensions ==
-  //  - width: 0 <= c < 100
-  //  - height: 0 <= r < 75
+  //  - width: 0 <= c < 5075
+  //  - height: 0 <= r < 50
 
   // == Rules ==
   //   - Any live cell with fewer than two live neighbours dies, as if by underpopulation.
@@ -47,9 +48,9 @@ export default class Bar extends Component {
 
   blankArray() {
     var ele = [];
-    for (var i = 0; i < 75; i++) {
+    for (var i = 0; i < 50; i++) {
       var tmp = [];
-      for (var j = 0; j < 100; j++) {
+      for (var j = 0; j < 75; j++) {
         tmp.push(0);
       }
       ele.push(tmp);
@@ -59,8 +60,8 @@ export default class Bar extends Component {
   buildArray() {
     var mat = this.blankArray();
 
-    for (var r = 0; r < 75; r++) {
-      for (var c = 0; c < 100; c++) {
+    for (var r = 0; r < 50; r++) {
+      for (var c = 0; c < 75; c++) {
         if (document.getElementById("" + r + "-" + c).className == "alive") {
           mat[r][c] = 1;
         }
@@ -75,8 +76,8 @@ export default class Bar extends Component {
     var future = this.blankArray();
     var grid = this.buildArray();
 
-    for (var l = 1; l < 74; l++) {
-      for (var m = 1; m < 99; m++) {
+    for (var l = 1; l < 50 - 1; l++) {
+      for (var m = 1; m < 75 - 1; m++) {
         var aliveNeighbours = 0;
         for (var i = -1; i <= 1; i++) {
           for (var j = -1; j <= 1; j++) {
@@ -94,8 +95,8 @@ export default class Bar extends Component {
         else future[l][m] = grid[l][m];
       }
     }
-    for (var i = 0; i < 75; i++) {
-      for (var j = 0; j < 100; j++) {
+    for (var i = 0; i < 50; i++) {
+      for (var j = 0; j < 75; j++) {
         if (future[i][j] == 1) {
           document.getElementById("" + i + "-" + j).className = "alive";
         } else {
@@ -107,7 +108,8 @@ export default class Bar extends Component {
 
   handleClick() {
     var btn = document.getElementById("button");
-
+    let speeds = ["Low", "Medium", "High"];
+    let numbers = [350, 250, 150];
     if (btn.className === "inactive") {
       btn.className = "active";
       console.log("Starting simulator...");
@@ -125,12 +127,12 @@ export default class Bar extends Component {
   }
 
   clearRow(r) {
-    for (var c = 0; c < 100; c++) {
+    for (var c = 0; c < 75; c++) {
       document.getElementById("" + r + "-" + c).className = "dead";
     }
   }
   eraseBoard() {
-    for (var i = 0; i < 75; i++) {
+    for (var i = 0; i < 50; i++) {
       setTimeout(this.clearRow(i), 500);
     }
   }
@@ -154,7 +156,7 @@ export default class Bar extends Component {
   render() {
     return (
       <div id="bar">
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Navbar.Brand>
             <img
               alt=""
@@ -270,27 +272,21 @@ export default class Bar extends Component {
               </Nav.Item>
               <Nav.Item className="mr-auto">
                 <Button variant="danger" onClick={this.eraseBoard}>
-                  Erase
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                    width="24px"
+                    height="24px"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+                  </svg>
                 </Button>
               </Nav.Item>
             </Nav>
             <Nav>
-              <Nav.Link>More deets</Nav.Link>
-              <Nav.Link>Dank memes</Nav.Link>
-              <NavDropdown title="Speed" id="collasible-nav-dropdown">
-                <NavDropdown.Item
-                  onClick={() => this.place("Gosper")}
-                  id="Gosper"
-                >
-                  Gosper Glider Gun
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={() => this.place("Simkin")}
-                  id="Simkin"
-                >
-                  Simkin Glider Gun
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="https://www.google.com/search?q=TypeError%3A+Cannot+set+property+%27disabled%27+of+undefined&rlz=1C5CHFA_enUS915US915&oq=TypeError%3A+Cannot+set+property+%27disabled%27+of+undefined&aqs=chrome..69i57j69i58&sourceid=chrome&ie=UTF-8"><img src={Github}/></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

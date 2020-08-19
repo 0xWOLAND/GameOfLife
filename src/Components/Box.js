@@ -58,11 +58,11 @@ export default class Box extends Component {
     let halfX = Math.floor(len[0] / 2);
     let halfY = Math.floor(len[1] / 2);
 
-    if (x - halfX - isXEven < 0 || x + halfX + isXEven >= 75) {
+    if (x - halfX - isXEven < 0 || x + halfX + isXEven >= 50) {
       alert(
         "Illegal Placement: Please place the pattern within the grid and account for space on the sides"
       );
-    } else if (y - halfY - isYEven < 0 || y + halfY + isYEven >= 100) {
+    } else if (y - halfY - isYEven < 0 || y + halfY + isYEven >= 75) {
       alert(
         "Illegal Placement: Please place the pattern within the grid and account for space on the sides"
       );

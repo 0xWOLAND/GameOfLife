@@ -1,14 +1,14 @@
 td {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   padding: 0;
+  margin: 2px;
 
-  border-style: solid;
   border-width: 0.5px;
   /* border-color: #0f4c81; */
   border-radius: 50%;
 }
-
+/* 
 .dead {
   display: block;
   background: black;
@@ -49,4 +49,50 @@ td {
   );
   filter: blur(0.7px);
   z-index: 2;
+} */
+
+.dead {
+  background-color: #212121;
 }
+
+
+.alive {
+    margin: 0 auto;
+    /* width: 24px;
+    height: 24px; */
+    background-color: #FF0;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px;
+    -webkit-animation: blinkYellow 1s infinite;
+    -moz-animation: blinkYellow 1s infinite;
+    -ms-animation: blinkYellow 1s infinite;
+    -o-animation: blinkYellow 1s infinite;
+    animation: blinkYellow 1s infinite;
+  }
+  
+  @-webkit-keyframes blinkYellow {
+      from { background-color: #FF0; }
+      50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px; }
+      to { background-color: #FF0; }
+  }
+  @-moz-keyframes blinkYellow {
+      from { background-color: #FF0; }
+      50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px; }
+      to { background-color: #FF0; }
+  }
+  @-ms-keyframes blinkYellow {
+      from { background-color: #FF0; }
+      50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px; }
+      to { background-color: #FF0; }
+  }
+  @-o-keyframes blinkYellow {
+      from { background-color: #FF0; }
+      50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px; }
+      to { background-color: #FF0; }
+  }
+  @keyframes blinkYellow {
+      from { background-color: #FF0; }
+      50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.135) 0 -0.625px 4.375px 0.675px, inset #808002 0 -0.625px 6.075px, #FF0 0 1.35px 8.1px; }
+      to { background-color: #FF0; }
+  }
+  
