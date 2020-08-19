@@ -135,11 +135,20 @@ export default class Bar extends Component {
     }
   }
 
+  place(ptn) {
+    console.log(document.getElementsByClassName("btnSelected").length);
+    if (document.getElementsByClassName("btnSelected").length === 0) {
+      document.getElementById(ptn).className += " btnSelected";
+    } else {
+      alert("You can only choose one pattern at a time");
+    }
+  }
+
   render() {
     return (
       <div id="bar">
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand >
+          <Navbar.Brand>
             <img
               alt=""
               src={Logo}
@@ -153,31 +162,78 @@ export default class Bar extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <NavDropdown title="Still Lifes" id="collasible-nav-dropdown">
-                <NavDropdown.Item>Block</NavDropdown.Item>
-                <NavDropdown.Item>Beehive</NavDropdown.Item>
-                <NavDropdown.Item>Loaf</NavDropdown.Item>
-                <NavDropdown.Item>Boat</NavDropdown.Item>
-                <NavDropdown.Item>Tub</NavDropdown.Item>
+                <NavDropdown.Item
+                  id="Block"
+                  onClick={() => this.place("Block")}
+                >
+                  Block
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Beehive")}
+                  id="Beehive"
+                >
+                  Beehive
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Loaf")} id="Loaf">
+                  Loaf
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Boat")} id="Boat">
+                  Boat
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Tub")} id="Tub">
+                  Tub
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Oscillators" id="collasible-nav-dropdown">
-                <NavDropdown.Item>Blinker</NavDropdown.Item>
-                <NavDropdown.Item>Toad</NavDropdown.Item>
-                <NavDropdown.Item>Beacon</NavDropdown.Item>
-                <NavDropdown.Item>Pulsar</NavDropdown.Item>
-                <NavDropdown.Item>Pentadecathlon</NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Blinker")}
+                  id="Blinker"
+                >
+                  Blinker
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Toad")} id="Toad">
+                  Toad
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Beacon")}
+                  id="Beacon"
+                >
+                  Beacon
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Pulsar")}
+                  id="Pulsar"
+                >
+                  Pulsar
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Pentadecathlon")}
+                  id="Pentadecathlon"
+                >
+                  Pentadecathlon
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Spaceships" id="collasible-nav-dropdown">
-                <NavDropdown.Item>Glider</NavDropdown.Item>
-                <NavDropdown.Item>Light-Weight Spaceship</NavDropdown.Item>
-                <NavDropdown.Item>Middle-Weight Spaceship</NavDropdown.Item>
-                <NavDropdown.Item>Heavy-Weight Spaceship</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Glider")} id="Glider">Glider</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Light-Weight Spaceship")} id="Light-Weight Spaceship">
+                  Light-Weight Spaceship
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Middle-Weight Spaceship")} id="Middle-Weight Spaceship">
+                  Middle-Weight Spaceship
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Heavy-Weight Spaceship")} id="Heavy-Weight Spaceship">
+                  Heavy-Weight Spaceship
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Glider Guns" id="collasible-nav-dropdown">
-                <NavDropdown.Item>Simkin Glider Gun</NavDropdown.Item>
-                <NavDropdown.Item>Gosper Glider Gun</NavDropdown.Item>
-                
+                <NavDropdown.Item onClick={() => this.place("Simkin Glider Gun")} id="Simkin Glider Gun">
+                  Simkin Glider Gun
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.place("Gosper Glider Gun")} id="Gosper Glider Gun">
+                  Gosper Glider Gun
+                </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item class="mr-auto">
+              <Nav.Item className="mr-auto">
                 <img
                   src="https://img.icons8.com/fluent/24/000000/play.png"
                   id="button"
@@ -185,7 +241,7 @@ export default class Bar extends Component {
                   onClick={this.handleClick}
                 />
               </Nav.Item>
-              <Nav.Item class="mr-auto">
+              <Nav.Item className="mr-auto">
                 <Button variant="danger" onClick={this.eraseBoard}>
                   Erase
                 </Button>

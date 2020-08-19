@@ -1,21 +1,52 @@
 td {
-    width: 14px;
-    height: 14px;
-    padding: 0;
-    margin: 0;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: black;
-    border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+
+  border-style: solid;
+  border-width: 0.5px;
+  /* border-color: #0f4c81; */
+  border-radius: 50%;
 }
 
-
-
 .dead {
-    background-color: white;
+  display: block;
+  background: black;
+  border-radius: 50%;
+  transform: all 200ms ease-in-out;
+  margin: 0;
+  background: radial-gradient(circle at 3px 3px, white, rgb(145, 145, 145));
 }
 
 .alive {
-    background-color: black;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #81e8f6,
+    #76deef 10%,
+    #055194 80%,
+    #062745 100%
+  );
 }
 
+.alive:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 12.6px;
+  height: 12.6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 0px,
+    #ffffff,
+    rgba(255, 255, 255, 0) 58%
+  );
+  filter: blur(0.7px);
+  z-index: 2;
+}

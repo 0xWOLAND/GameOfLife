@@ -9,12 +9,42 @@ export default class Box extends Component {
     this.state = { className: "dead" };
   }
   handleChange() {
+    let patterns = [
+      "Block",
+      "Beehive",
+      "Loaf",
+      "Boat",
+      "Tub",
+      "Blinker",
+      "Toad",
+      "Beacon",
+      "Pulsar",
+      "Pentadecathlon",
+      "Glider",
+      "Light-Weight Spaceship",
+      "Middle-Weight Spaceship",
+      "Heavy-Weight Spaceship",
+      "Gosper Glider Gun",
+      "Simkin Glider Gun",
+    ];
     
-    if (document.getElementById("button").className === "inactive") {
-      if (this.state.className == "dead") {
-        this.setState({ className: "alive" });
-      } else {
-        this.setState({ className: "dead" });
+    if (
+      document.getElementsByClassName("btnSelected").length > 0 &&
+      document.getElementById("button").className === "inactive"
+    ) {
+      console.log("hyo");
+      var str = document.getElementsByClassName("btnSelected")[0].className;
+      str = str.substr(0, str.indexOf("btnSelected"));
+      console.log(str);
+
+      document.getElementsByClassName("btnSelected")[0].className = str;
+    } else {
+      if (document.getElementById("button").className === "inactive") {
+        if (this.state.className == "dead") {
+          this.setState({ className: "alive" });
+        } else {
+          this.setState({ className: "dead" });
+        }
       }
     }
   }
