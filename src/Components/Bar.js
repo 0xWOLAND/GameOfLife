@@ -126,14 +126,11 @@ export default class Bar extends Component {
     }
   }
 
-  clearRow(r) {
-    for (var c = 0; c < 75; c++) {
-      document.getElementById("" + r + "-" + c).className = "dead";
-    }
-  }
   eraseBoard() {
     for (var i = 0; i < 50; i++) {
-      setTimeout(() => this.clearRow(i), 500);
+      for (var j = 0; j < 75; j++) {
+        document.getElementById("" + i + "-" + j).className = "dead";
+      }
     }
   }
 
