@@ -27,12 +27,31 @@ export default class Box extends Component {
       "Gosper Glider Gun",
       "Simkin Glider Gun",
     ];
-    
+
+    let sizes = [
+      [4, 4],
+      [6, 5],
+      [6, 6],
+      [5, 5],
+      [5, 5],
+      [5, 5],
+      [6, 6],
+      [6, 6],
+      [17, 17],
+      [11, 18],
+      [6, 6],
+      [8, 6],
+      [11, 9],
+      [12, 10],
+      [38, 11],
+      [35, 23],
+    ];
+
     if (
       document.getElementsByClassName("btnSelected").length > 0 &&
       document.getElementById("button").className === "inactive"
     ) {
-      console.log("hyo");
+      console.log(document.getElementsByClassName("btnSelected")[0].id);
       var str = document.getElementsByClassName("btnSelected")[0].className;
       str = str.substr(0, str.indexOf("btnSelected"));
       console.log(str);
