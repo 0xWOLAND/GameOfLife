@@ -228,36 +228,36 @@ export default class Bar extends Component {
                   Glider
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  onClick={() => this.place("Light-Weight Spaceship")}
-                  id="Light-Weight Spaceship"
+                  onClick={() => this.place("Light")}
+                  id="Light"
                 >
                   Light-Weight Spaceship
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  onClick={() => this.place("Middle-Weight Spaceship")}
-                  id="Middle-Weight Spaceship"
+                  onClick={() => this.place("Middle")}
+                  id="Middle"
                 >
                   Middle-Weight Spaceship
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  onClick={() => this.place("Heavy-Weight Spaceship")}
-                  id="Heavy-Weight Spaceship"
+                  onClick={() => this.place("Heavy")}
+                  id="Heavy"
                 >
                   Heavy-Weight Spaceship
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Glider Guns" id="collasible-nav-dropdown">
                 <NavDropdown.Item
-                  onClick={() => this.place("Simkin Glider Gun")}
-                  id="Simkin Glider Gun"
-                >
-                  Simkin Glider Gun
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={() => this.place("Gosper Glider Gun")}
-                  id="Gosper Glider Gun"
+                  onClick={() => this.place("Gosper")}
+                  id="Gosper"
                 >
                   Gosper Glider Gun
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Simkin")}
+                  id="Simkin"
+                >
+                  Simkin Glider Gun
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item className="mr-auto">
@@ -277,6 +277,20 @@ export default class Bar extends Component {
             <Nav>
               <Nav.Link>More deets</Nav.Link>
               <Nav.Link>Dank memes</Nav.Link>
+              <NavDropdown title="Speed" id="collasible-nav-dropdown">
+                <NavDropdown.Item
+                  onClick={() => this.place("Gosper")}
+                  id="Gosper"
+                >
+                  Gosper Glider Gun
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Simkin")}
+                  id="Simkin"
+                >
+                  Simkin Glider Gun
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
