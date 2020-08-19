@@ -137,11 +137,18 @@ export default class Bar extends Component {
 
   place(ptn) {
     console.log(document.getElementsByClassName("btnSelected").length);
-    if (document.getElementsByClassName("btnSelected").length === 0) {
-      document.getElementById(ptn).className += " btnSelected";
-    } else {
-      alert("You can only choose one pattern at a time");
+    if (document.getElementsByClassName("btnSelected").length !== 0) {
+      for (
+        var i = 0;
+        i < document.getElementsByClassName("btnSelected").length;
+        i++
+      ) {
+        var str = document.getElementsByClassName("btnSelected")[i].className;
+        str = str.substr(0, str.indexOf("btnSelected"));
+        document.getElementsByClassName("btnSelected")[i].className = str;
+      }
     }
+    document.getElementById(ptn).className += " btnSelected";
   }
 
   render() {
@@ -214,22 +221,42 @@ export default class Bar extends Component {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Spaceships" id="collasible-nav-dropdown">
-                <NavDropdown.Item onClick={() => this.place("Glider")} id="Glider">Glider</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => this.place("Light-Weight Spaceship")} id="Light-Weight Spaceship">
+                <NavDropdown.Item
+                  onClick={() => this.place("Glider")}
+                  id="Glider"
+                >
+                  Glider
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => this.place("Light-Weight Spaceship")}
+                  id="Light-Weight Spaceship"
+                >
                   Light-Weight Spaceship
                 </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => this.place("Middle-Weight Spaceship")} id="Middle-Weight Spaceship">
+                <NavDropdown.Item
+                  onClick={() => this.place("Middle-Weight Spaceship")}
+                  id="Middle-Weight Spaceship"
+                >
                   Middle-Weight Spaceship
                 </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => this.place("Heavy-Weight Spaceship")} id="Heavy-Weight Spaceship">
+                <NavDropdown.Item
+                  onClick={() => this.place("Heavy-Weight Spaceship")}
+                  id="Heavy-Weight Spaceship"
+                >
                   Heavy-Weight Spaceship
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Glider Guns" id="collasible-nav-dropdown">
-                <NavDropdown.Item onClick={() => this.place("Simkin Glider Gun")} id="Simkin Glider Gun">
+                <NavDropdown.Item
+                  onClick={() => this.place("Simkin Glider Gun")}
+                  id="Simkin Glider Gun"
+                >
                   Simkin Glider Gun
                 </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => this.place("Gosper Glider Gun")} id="Gosper Glider Gun">
+                <NavDropdown.Item
+                  onClick={() => this.place("Gosper Glider Gun")}
+                  id="Gosper Glider Gun"
+                >
                   Gosper Glider Gun
                 </NavDropdown.Item>
               </NavDropdown>
