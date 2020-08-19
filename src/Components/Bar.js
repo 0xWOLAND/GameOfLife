@@ -7,12 +7,10 @@ import {
   ButtonGroup,
   ToggleButton,
   Button,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalTitle
+  OverlayTrigger,
+  Tooltip
 } from "react-bootstrap";
-import Github from "./github.png"
+import Github from "./github.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Pause from "./pause.png";
 import Logo from "./logo.png";
@@ -24,8 +22,6 @@ export default class Bar extends Component {
     this.simulate = this.simulate.bind(this);
     this.getNumAliveNeighbors = this.getNumAliveNeighbors.bind(this);
     this.eraseBoard = this.eraseBoard.bind(this);
-
-    
   }
 
   getNumAliveNeighbors(R, C) {
@@ -74,7 +70,6 @@ export default class Bar extends Component {
       }
     }
 
-    
     return mat;
   }
 
@@ -118,13 +113,12 @@ export default class Bar extends Component {
     let numbers = [350, 250, 150];
     if (btn.className === "inactive") {
       btn.className = "active";
-      
+
       this.setState({
         incrementer: setInterval(this.simulate.bind(this), 250),
       });
       btn.src = "https://img.icons8.com/fluent/30/000000/pause.png";
     } else {
-      
       btn.className = "inactive";
       clearInterval(this.state.incrementer);
       this.setState({ incrementer: null });
@@ -144,7 +138,6 @@ export default class Bar extends Component {
   }
 
   place(ptn) {
-    
     if (document.getElementsByClassName("btnSelected").length !== 0) {
       for (
         var i = 0;
@@ -160,12 +153,14 @@ export default class Bar extends Component {
   }
 
   render() {
+    const renderTooltip = (props) => (
+      <Tooltip id="button-tooltip" {...props}>
+        Learn how to use this visualizer in the corresponding Github repository description
+      </Tooltip>
+    );
     
-
-
     return (
       <div id="bar">
-
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Navbar.Brand>
             <img
@@ -296,7 +291,36 @@ export default class Bar extends Component {
               </Nav.Item>
             </Nav>
             <Nav>
-              <Nav.Link href="https://github.com/bhargavannem/GameOfLife"><img src={Github}/></Nav.Link>
+              <Nav.Link
+                target="_blank"
+                href="https://github.com/bhargavannem/GameOfLife"
+                >
+                <img src={Github} width="24" height="24"/>
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link
+                target="_blank"
+                href="https://github.com/bhargavannem/GameOfLife"
+              >
+                <OverlayTrigger
+    placement="bottom"
+    delay={{ show: 250, hide: 400 }}
+    overlay={renderTooltip}
+    >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
+    </svg>
+    
+  </OverlayTrigger>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
