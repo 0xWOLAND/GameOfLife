@@ -286,7 +286,7 @@ export default class Bar extends Component {
               </Nav.Item>
             </Nav>
             <Nav>
-              <Nav.Link href="https://www.google.com/search?q=TypeError%3A+Cannot+set+property+%27disabled%27+of+undefined&rlz=1C5CHFA_enUS915US915&oq=TypeError%3A+Cannot+set+property+%27disabled%27+of+undefined&aqs=chrome..69i57j69i58&sourceid=chrome&ie=UTF-8"><img src={Github}/></Nav.Link>
+              <Nav.Link href="https://github.com/bhargavannem/GameOfLife"><img src={Github}/></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
