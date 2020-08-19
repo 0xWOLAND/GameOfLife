@@ -74,7 +74,7 @@ export default class Bar extends Component {
       }
     }
 
-    // console.log(mat);
+    
     return mat;
   }
 
@@ -118,13 +118,13 @@ export default class Bar extends Component {
     let numbers = [350, 250, 150];
     if (btn.className === "inactive") {
       btn.className = "active";
-      console.log("Starting simulator...");
+      
       this.setState({
         incrementer: setInterval(this.simulate.bind(this), 250),
       });
       btn.src = "https://img.icons8.com/fluent/30/000000/pause.png";
     } else {
-      console.log("Stopping simulator...");
+      
       btn.className = "inactive";
       clearInterval(this.state.incrementer);
       this.setState({ incrementer: null });
@@ -144,7 +144,7 @@ export default class Bar extends Component {
   }
 
   place(ptn) {
-    console.log(document.getElementsByClassName("btnSelected").length);
+    
     if (document.getElementsByClassName("btnSelected").length !== 0) {
       for (
         var i = 0;

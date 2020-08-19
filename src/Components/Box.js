@@ -9,7 +9,6 @@ export default class Box extends Component {
     this.state = { className: "dead" };
   }
   buildElement(name) {
-    console.log("name: " + name)
     let patterns = [
       "Block",
       "Beehive",
@@ -28,7 +27,6 @@ export default class Box extends Component {
       "Gosper",
       "Simkin",
     ];
-    console.log("index: " + patterns.indexOf(name))
     let sizes = [
       [4, 4],
       [5, 6],
@@ -48,7 +46,6 @@ export default class Box extends Component {
       [16, 35]
     ];
     let len = sizes[patterns.indexOf(name)];
-    console.log(len)
     let ID = this.props.id;
     let x = parseInt(ID.substr(0, ID.indexOf("-")));
     let y = parseInt(ID.substr(ID.indexOf("-") + 1));
@@ -67,14 +64,6 @@ export default class Box extends Component {
         "Illegal Placement: Please place the pattern within the grid and account for space on the sides"
       );
     } else {
-      console.log("X: " + x);
-      console.log("Y: " + y);
-      console.log("Width: " + len[0]);
-      console.log("Height: " + len[1]);
-      console.log("Half X: " + halfX);
-      console.log("Half Y: " + halfY);
-      console.log("Is X Even: " + isXEven);
-      console.log("Is Y Even: " + isYEven);
 
       let matrices = [
         // Block
@@ -242,10 +231,6 @@ export default class Box extends Component {
       ];
       let xItr = 0;
       let yItr = 0;
-      console.log("X from: " + (x - halfX));
-      console.log("X to: " + (x + halfX));
-      console.log("Y from: " + (y - halfY));
-      console.log("Y to: " + (y + halfY));
       for (let X = x - halfX; X < x + halfX; X++) {
         for (let Y = y - halfY; Y < y + halfY; Y++) {
           try{
@@ -255,10 +240,6 @@ export default class Box extends Component {
               document.getElementById("" + X + "-" + Y).className = "dead";
             }
           } catch {
-            console.log(matrices[patterns.indexOf(name)][xItr]);
-            console.log(yItr);
-            console.log(xItr);
-            console.log(matrices[patterns.indexOf(name)]);
           }
           yItr++;
         }
@@ -268,7 +249,6 @@ export default class Box extends Component {
     }
   }
   handleChange() {
-    console.log(this.props.id);
     if (
       document.getElementsByClassName("btnSelected").length > 0 &&
       document.getElementById("button").className === "inactive"
