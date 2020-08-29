@@ -3,10 +3,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import Box from "./Components/Box";
 import Bar from "./Components/Bar";
+import Popup from "./Components/Popup"
+
+
 function App() {
+  
+  
   return (
-    <div id="App">
+    <div id="App" >
       <Bar />
+      <Popup />
       <div id="tbl">
         <table>
           <tbody>
